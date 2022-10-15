@@ -19,23 +19,23 @@ public class MyMonitor : MonoBehaviour
     {
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
-        var vertices = new Vector3[96];
+        var vertices = new Vector3[25];
 
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(-s, naik, -s);
         vertices[1] = new Vector3(s, naik, -s);
-        vertices[2] = new Vector3(-s, t + naik, -s);
-        vertices[3] = new Vector3(s, t + naik, -s);
+        vertices[2] = new Vector3(-s + det, t + naik, -s + det);
+        vertices[3] = new Vector3(s-det, t + naik, -s + det);
         vertices[4] = new Vector3(-s, naik, -s + tebal);
         vertices[5] = new Vector3(s, naik, -s + tebal);
-        vertices[6] = new Vector3(-s, t + naik, -s + tebal);
-        vertices[7] = new Vector3(s, t + naik, -s + tebal);
+        vertices[6] = new Vector3(-s + det, t + naik, -s + tebal + det);
+        vertices[7] = new Vector3(s-det, t + naik, -s + tebal + det);
         vertices[8] = new Vector3(-s, naik, s);
-        vertices[9] = new Vector3(-s, t + naik, s);
+        vertices[9] = new Vector3(-s + det, t + naik, s-det);
         vertices[10] = new Vector3(-s + tebal, naik, s);
-        vertices[11] = new Vector3(-s + tebal, t + naik, s);
+        vertices[11] = new Vector3(-s + tebal + det, t + naik, s-det);
         vertices[12] = new Vector3(-s + tebal, naik, -s + tebal);
-        vertices[13] = new Vector3(-s + tebal, t + naik, -s + tebal);
+        vertices[13] = new Vector3(-s + tebal + det, t + naik, -s + tebal + det);
 
         // Titik-titik kaki monitor
         vertices[14] = new Vector3(-s + t, naik, -s);
@@ -49,6 +49,7 @@ public class MyMonitor : MonoBehaviour
         vertices[22] = new Vector3(-s - 0.2f, 0, -s + t + det);
         vertices[23] = new Vector3(s + 0.2f, 0, -s + t + det);
         vertices[24] = new Vector3(s, 0, -s);
+
         mesh.vertices = vertices;
 
         mesh.triangles = new int[] {
@@ -100,7 +101,7 @@ public class MyMonitor : MonoBehaviour
             18, 22, 20,
             20, 0, 18,
             21, 24, 1,
-            23, 24, 21
+            23, 24, 21,
         };
         GetComponent<MeshFilter>().mesh = mesh;
 
