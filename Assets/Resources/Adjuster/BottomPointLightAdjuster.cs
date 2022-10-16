@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BottomPointLightAdjuster : MonoBehaviour
 {
-
+    bool isBackward = false;
     int spinSpeed = 2;
     Vector3 RotateAmountX = new Vector3(50.0f, 0f, 0.0f);
     Vector3 RotateAmountY = new Vector3(0.0f, 50.0f, 0.0f);
@@ -26,7 +26,22 @@ public class BottomPointLightAdjuster : MonoBehaviour
             var valueB = Random.Range(0.0f, 1.0f);
             lt.color = new Color(valueR, valueG, valueB);
         }
+    }
 
-        transform.Rotate(RotateAmountY * -Time.deltaTime / spinSpeed);
+    void Update() {
+        if(isBackward == false){
+            transform.Rotate(RotateAmountY * Time.deltaTime / spinSpeed);
+        }      
+        else
+        {
+            transform.Rotate(RotateAmountY * -Time.deltaTime / spinSpeed);
+        }
+
+        if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).y <= 160) {
+            isBackward = false;
+        }        
+        else if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).y >= 200) {
+            isBackward = true;
+        }
     }
 }
