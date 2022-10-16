@@ -76,8 +76,16 @@ public class MyMouse : MonoBehaviour {
 			inner.y = ySize - roundness;
 		}
 
-		normals[i] = (vertices[i] - inner).normalized;
-		vertices[i] = inner + normals[i] * roundness;
+		if(x == xSize) {
+			inner.x = xSize;
+			normals[i] = (vertices[i] - inner).normalized;
+			vertices[i] = inner + normals[i];
+		}
+		else
+		{
+			normals[i] = (vertices[i] - inner).normalized;
+			vertices[i] = inner + normals[i] * roundness;
+		}
 	}
 
 	private void CreateTriangles () {
