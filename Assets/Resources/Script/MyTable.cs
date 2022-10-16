@@ -8,11 +8,11 @@ public class MyTable : MonoBehaviour
     public Material chairMaterial;
 
     // Variables
-    float s = 0.5f;
-    float jarakKaki = 4.0f;
-    float kakiHeight = 1.5f;
-    float tebalAlas = 0.2f;
-    float lebarAlas = 0.5f;
+    float s = 0.7f;
+    float jarakKaki = 7.0f;
+    float kakiHeight = 4.0f;
+    float tebalAlas = 0.8f;
+    float lebarAlas = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,32 +38,32 @@ public class MyTable : MonoBehaviour
         vertices[13] = new Vector3(jarakKaki, kakiHeight, s);
         vertices[14] = new Vector3(s + jarakKaki, kakiHeight, 0);
         vertices[15] = new Vector3(s + jarakKaki, kakiHeight, s);
-        vertices[16] = new Vector3(0, 0, jarakKaki);
-        vertices[17] = new Vector3(0, 0, s + jarakKaki);
-        vertices[18] = new Vector3(s, 0, jarakKaki);
-        vertices[19] = new Vector3(s, 0, s + jarakKaki);
-        vertices[20] = new Vector3(0, kakiHeight, jarakKaki);
-        vertices[21] = new Vector3(0, kakiHeight, s + jarakKaki);
-        vertices[22] = new Vector3(s, kakiHeight, jarakKaki);
-        vertices[23] = new Vector3(s, kakiHeight, s + jarakKaki);
-        vertices[24] = new Vector3(jarakKaki, 0, jarakKaki);
-        vertices[25] = new Vector3(jarakKaki, 0, s + jarakKaki);
-        vertices[26] = new Vector3(s + jarakKaki, 0, jarakKaki);
-        vertices[27] = new Vector3(s + jarakKaki, 0, s + jarakKaki);
-        vertices[28] = new Vector3(jarakKaki, kakiHeight, jarakKaki);
-        vertices[29] = new Vector3(jarakKaki, kakiHeight, s + jarakKaki);
-        vertices[30] = new Vector3(s + jarakKaki, kakiHeight, jarakKaki);
-        vertices[31] = new Vector3(s + jarakKaki, kakiHeight, s + jarakKaki);
+        vertices[16] = new Vector3(0, 0, jarakKaki/2);
+        vertices[17] = new Vector3(0, 0, s + jarakKaki/2);
+        vertices[18] = new Vector3(s, 0, jarakKaki/2);
+        vertices[19] = new Vector3(s, 0, s + jarakKaki/2);
+        vertices[20] = new Vector3(0, kakiHeight, jarakKaki/2);
+        vertices[21] = new Vector3(0, kakiHeight, s + jarakKaki/2);
+        vertices[22] = new Vector3(s, kakiHeight, jarakKaki/2);
+        vertices[23] = new Vector3(s, kakiHeight, s + jarakKaki/2);
+        vertices[24] = new Vector3(jarakKaki, 0, jarakKaki/2);
+        vertices[25] = new Vector3(jarakKaki, 0, s + jarakKaki/2);
+        vertices[26] = new Vector3(s + jarakKaki, 0, jarakKaki/2);
+        vertices[27] = new Vector3(s + jarakKaki, 0, s + jarakKaki/2);
+        vertices[28] = new Vector3(jarakKaki, kakiHeight, jarakKaki/2);
+        vertices[29] = new Vector3(jarakKaki, kakiHeight, s + jarakKaki/2);
+        vertices[30] = new Vector3(s + jarakKaki, kakiHeight, jarakKaki/2);
+        vertices[31] = new Vector3(s + jarakKaki, kakiHeight, s + jarakKaki/2);
 
         // Titik-titik Alas Kursi
         vertices[32] = new Vector3(0 - lebarAlas, kakiHeight, 0 - lebarAlas);
         vertices[33] = new Vector3(s + lebarAlas + jarakKaki, kakiHeight, 0 - lebarAlas);
-        vertices[34] = new Vector3(0 - lebarAlas, kakiHeight, s + jarakKaki + lebarAlas);
-        vertices[35] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight, s + jarakKaki + lebarAlas);
+        vertices[34] = new Vector3(0 - lebarAlas, kakiHeight, s + jarakKaki/2 + lebarAlas);
+        vertices[35] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight, s + jarakKaki/2 + lebarAlas);
         vertices[36] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
         vertices[37] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
-        vertices[38] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas);
-        vertices[39] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas);     
+        vertices[38] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);
+        vertices[39] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);     
 
         mesh.vertices = vertices;
 
