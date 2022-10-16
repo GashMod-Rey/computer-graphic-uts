@@ -2,7 +2,9 @@
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MyMouse : MonoBehaviour {
-
+	[SerializeField]
+    public Material chairMaterial;
+	
 	public int xSize, ySize, zSize;
 	public int roundness;
 

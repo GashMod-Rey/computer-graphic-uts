@@ -17,12 +17,12 @@ public class MyMonitorLCD : MonoBehaviour
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(0, 2.25f, 0);
         vertices[1] = new Vector3(0, 2.25f, 0.75f);
-        vertices[2] = new Vector3(6, 2.25f, 0);
-        vertices[3] = new Vector3(6, 2.25f, 0.75f);
+        vertices[2] = new Vector3(9, 2.25f, 0);
+        vertices[3] = new Vector3(9, 2.25f, 0.75f);
         vertices[4] = new Vector3(0, 6.25f, 0);
         vertices[5] = new Vector3(0, 6.25f, 0.75f);
-        vertices[6] = new Vector3(6, 6.25f, 0);
-        vertices[7] = new Vector3(6, 6.25f, 0.75f);
+        vertices[6] = new Vector3(9, 6.25f, 0);
+        vertices[7] = new Vector3(9, 6.25f, 0.75f);
 
         mesh.vertices = vertices;
 
