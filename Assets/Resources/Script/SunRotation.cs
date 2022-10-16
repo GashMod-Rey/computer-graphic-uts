@@ -15,4 +15,13 @@ public class SunRotation : MonoBehaviour
                                     Vector3.right,
                                     theta);
     }
+
+    void FixedUpdate() {
+        if(Input.GetKey("-")) {
+            theta -= 0.001f;
+        }
+        else if(Input.GetKey("=")) {
+            theta += 0.001f;
+        }    
+    }
 }
