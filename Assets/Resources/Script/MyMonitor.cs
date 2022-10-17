@@ -20,6 +20,7 @@ public class MyMonitor : MonoBehaviour
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
         var vertices = new Vector3[25];
+        var uvs = new Vector2[vertices.Length];
 
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(-s, naik, -s);
@@ -105,6 +106,35 @@ public class MyMonitor : MonoBehaviour
         };
         mesh.RecalculateNormals();
         
+        uvs[0] = new Vector2(0, 0);
+        uvs[1] = new Vector2(0, 1.0f);
+        uvs[2] = new Vector2(1.0f, 0);
+        uvs[3] = new Vector2(1.0f, 1.0f);
+        uvs[4] = new Vector2(1.0f, 1.0f);
+        uvs[5] = new Vector2(0, 1.0f);
+        uvs[6] = new Vector2(1.0f, 0);
+        uvs[7] = new Vector2(0, 0);
+        uvs[8] = new Vector2(0, 1.0f);
+        uvs[9] = new Vector2(1.0f, 1.0f);
+        uvs[10] = new Vector2(1.0f, 1.0f);        
+        uvs[11] = new Vector2(0, 1.0f);
+        uvs[12] = new Vector2(1.0f, 0);
+        uvs[13] = new Vector2(0, 0);
+
+        // Titik-titik kaki monitor
+        uvs[14] = new Vector2(1.0f, 0);
+        uvs[15] = new Vector2(1.0f, 1.0f);
+        uvs[16] = new Vector2(0, 1.0f);
+        uvs[17] = new Vector2(0, 0);
+        uvs[18] = new Vector2(1.0f, 0);
+        uvs[19] = new Vector2(1.0f, 1.0f);
+        uvs[20] = new Vector2(1.0f, 0);
+        uvs[21] = new Vector2(1.0f, 1.0f);
+        uvs[22] = new Vector2(1.0f, 1.0f);
+        uvs[23] = new Vector2(0, 0);
+        uvs[24] = new Vector2(1.0f, 1.0f);
+
+        mesh.uv = uvs;
         GetComponent<MeshFilter>().mesh = mesh;
 
         GetComponent<MeshRenderer>().material = chairMaterial;
