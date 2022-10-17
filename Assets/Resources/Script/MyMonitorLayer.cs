@@ -13,48 +13,28 @@ public class MyMonitorLayer : MonoBehaviour
     {
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
-        var vertices = new Vector3[8];
+        var vertices = new Vector3[4];
         var uvs = new Vector2[vertices.Length];
-        myTexture = Resources.Load<Texture>("Textures/LCDTexture");
-        chairMaterial.mainTexture = myTexture;
 
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(0, 2.25f, 0);
-        vertices[1] = new Vector3(0, 2.25f, 0);
-        vertices[2] = new Vector3(9, 2.25f, 0);
-        vertices[3] = new Vector3(9, 2.25f, 0);
-        vertices[4] = new Vector3(0, 6.25f, 0);
-        vertices[5] = new Vector3(0, 6.25f, 0);
-        vertices[6] = new Vector3(9, 6.25f, 0);
-        vertices[7] = new Vector3(9, 6.25f, 0);
+        vertices[1] = new Vector3(9, 2.25f, 0);
+        vertices[2] = new Vector3(0, 6.25f, 0);
+        vertices[3] = new Vector3(9, 6.25f, 0);
 
-        uvs[0] = new Vector2(0.0f, 0.5f);
-        uvs[1] = new Vector2(0.25f, 0.5f);
-        uvs[2] = new Vector2(0.0f, 0.0f);
-        uvs[3] = new Vector2(0.25f, 0.0f);
-        uvs[4] = new Vector2(0.25f, 0.5f);
-        uvs[5] = new Vector2(0.5f, 0.5f);
-        uvs[6] = new Vector2(0.25f, 0.0f);
-        uvs[7] = new Vector2(0.5f, 0.0f);
+        uvs[0] = new Vector2(1.0f, 0.0f);
+        uvs[1] = new Vector2(0.0f, 0.0f);
+        uvs[2] = new Vector2(1.0f, 1.0f);
+        uvs[3] = new Vector2(0.0f, 1.0f);
 
         mesh.vertices = vertices;
 
         mesh.triangles = new int[] {
-            2, 1, 0,
-            1, 2, 3,
-            4, 5, 6,
-            7, 6, 5,
-            6, 2, 0,
-            0, 4, 6,
-            7, 3, 2,
-            2, 6, 7,
-            5, 1, 3,
-            7, 5, 3,
-            0, 1, 4,
-            1, 5, 4,
+            0, 1, 2,
+            3, 2, 1,
         };
         mesh.RecalculateNormals();
-        
+        mesh.uv = uvs;
         GetComponent<MeshFilter>().mesh = mesh;
 
         GetComponent<MeshRenderer>().material = chairMaterial;

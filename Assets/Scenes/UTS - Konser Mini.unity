@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb155a45cf766a48aa14ed0edec22e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 2100000, guid: c099f091e7e1cec4194bbc941068f926, type: 2}
+  chairMaterial: {fileID: 2100000, guid: 6763fd59e5fa621489a31b491a6e7983, type: 2}
 --- !u!23 &448729027
 MeshRenderer:
   m_ObjectHideFlags: 0
