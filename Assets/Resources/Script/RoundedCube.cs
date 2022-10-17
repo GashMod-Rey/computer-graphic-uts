@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class RoundedCubes : MonoBehaviour
+public class RoundedCube : MonoBehaviour
 {
     public int xSize, ySize, zSize;
     public int roundness;
@@ -68,6 +68,12 @@ public class RoundedCubes : MonoBehaviour
 		}
 		else if (x > xSize - roundness) {
 			inner.x = xSize - roundness;
+		}
+		if (y < roundness) {
+			inner.y = roundness;
+		}
+		else if (y > ySize - roundness) {
+			inner.y = ySize - roundness;
 		}
 		if (z < roundness) {
 			inner.z = roundness;

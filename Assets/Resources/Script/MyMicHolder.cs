@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class RoundedCubes : MonoBehaviour
+public class MyMicHolder : MonoBehaviour
 {
     public int xSize, ySize, zSize;
     public int roundness;
@@ -69,10 +69,7 @@ public class RoundedCubes : MonoBehaviour
 		else if (x > xSize - roundness) {
 			inner.x = xSize - roundness;
 		}
-		if (z < roundness) {
-			inner.z = roundness;
-		}
-		else if (z > zSize - roundness) {
+		if (z > zSize - roundness) {
 			inner.z = zSize - roundness;
 		}
 
@@ -159,7 +156,7 @@ public class RoundedCubes : MonoBehaviour
     
         for (int y = 0; y < ySize; y++, v++) {
 			for (int q = 0; q < xSize; q++, v++) {
-				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+				// tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < zSize; q++, v++) {
 				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
@@ -173,8 +170,8 @@ public class RoundedCubes : MonoBehaviour
 			tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
 		}
 
-        tY = CreateTopFace(trianglesY, tY, ring);
-		tY = CreateBottomFace(trianglesY, tY, ring);
+        // tY = CreateTopFace(trianglesY, tY, ring);
+		// tY = CreateBottomFace(trianglesY, tY, ring);
 
 		mesh.subMeshCount = 3;
 		mesh.SetTriangles(trianglesZ, 0);
