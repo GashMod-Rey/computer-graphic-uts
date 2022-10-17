@@ -2,9 +2,7 @@
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MyMouse : MonoBehaviour {
-	[SerializeField]
-    public Material chairMaterial;
-	
+
 	public int xSize, ySize, zSize;
 	public int roundness;
 
@@ -89,22 +87,35 @@ public class MyMouse : MonoBehaviour {
 	}
 
 	private void CreateTriangles () {
-		int quads = (xSize * ySize + xSize * zSize + ySize * zSize) * 2;
-		int[] triangles = new int[quads * 6];
-        int ring = (xSize + zSize) * 2;
-		int t = 0, v = 0;
+		int[] trianglesZ = new int[(xSize * ySize) * 12];
+		int[] trianglesX = new int[(ySize * zSize) * 12];
+		int[] trianglesY = new int[(xSize * zSize) * 12];
+		int ring = (xSize + zSize) * 2;
+		int tZ = 0, tX = 0, tY = 0, v = 0;
     
         for (int y = 0; y < ySize; y++, v++) {
-            for (int q = 0; q < ring - 1; q++, v++) {
-                t = SetQuad(triangles, t, v, v + 1, v + ring, v + ring + 1);
-            }
-            t = SetQuad(triangles, t, v, v - ring + 1, v + ring, v + 1);
-        }
+			for (int q = 0; q < xSize; q++, v++) {
+				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+			}
+			for (int q = 0; q < zSize; q++, v++) {
+				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
+			}
+			for (int q = 0; q < xSize; q++, v++) {
+				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+			}
+			for (int q = 0; q < zSize - 1; q++, v++) {
+				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
+			}
+			tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
+		}
 
-        t = CreateTopFace(triangles, t, ring);
-        t = CreateBottomFace(triangles, t, ring);
+        tY = CreateTopFace(trianglesY, tY, ring);
+		tY = CreateBottomFace(trianglesY, tY, ring);
 
-		mesh.triangles = triangles;
+		mesh.subMeshCount = 3;
+		mesh.SetTriangles(trianglesZ, 0);
+		mesh.SetTriangles(trianglesX, 1);
+		mesh.SetTriangles(trianglesY, 2);
 	}
 
 	private int CreateTopFace (int[] triangles, int t, int ring) {
