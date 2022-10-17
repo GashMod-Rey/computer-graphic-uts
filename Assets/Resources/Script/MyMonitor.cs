@@ -103,6 +103,8 @@ public class MyMonitor : MonoBehaviour
             21, 24, 1,
             23, 24, 21,
         };
+        mesh.RecalculateNormals();
+        
         GetComponent<MeshFilter>().mesh = mesh;
 
         GetComponent<MeshRenderer>().material = chairMaterial;

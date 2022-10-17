@@ -170,9 +170,6 @@ public class MyMicHolder : MonoBehaviour
 			tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
 		}
 
-        // tY = CreateTopFace(trianglesY, tY, ring);
-		// tY = CreateBottomFace(trianglesY, tY, ring);
-
 		mesh.subMeshCount = 3;
 		mesh.SetTriangles(trianglesZ, 0);
 		mesh.SetTriangles(trianglesX, 1);
