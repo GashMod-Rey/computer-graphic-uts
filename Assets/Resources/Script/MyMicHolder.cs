@@ -152,7 +152,7 @@ public class MyMicHolder : MonoBehaviour
 		int[] trianglesX = new int[(ySize * zSize) * 12];
 		int[] trianglesY = new int[(xSize * zSize) * 12];
 		int ring = (xSize + zSize) * 2;
-		int tZ = 0, tX = 0, tY = 0, v = 0;
+		int tZ = 0, tX = 0, v = 0;
     
         for (int y = 0; y < ySize; y++, v++) {
 			for (int q = 0; q < xSize; q++, v++) {
