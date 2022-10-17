@@ -6,6 +6,7 @@ public class MyMonitorLCD : MonoBehaviour
 {
     [SerializeField]
     public Material chairMaterial;
+    Texture myTexture;
 
     // Start is called before the first frame update
     void Start()
@@ -13,6 +14,8 @@ public class MyMonitorLCD : MonoBehaviour
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
         var vertices = new Vector3[8];
+        var uvs = new Vector2[vertices.Length];
+        myTexture = Resources.Load<Texture>("Textures/carbon");
 
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(0, 2.25f, 0);
@@ -23,6 +26,15 @@ public class MyMonitorLCD : MonoBehaviour
         vertices[5] = new Vector3(0, 6.25f, 0.75f);
         vertices[6] = new Vector3(9, 6.25f, 0);
         vertices[7] = new Vector3(9, 6.25f, 0.75f);
+
+        // uvs[0] = new Vector2(0.0f, 0.5f);
+        // uvs[1] = new Vector2(0.25f, 0.5f);
+        // uvs[2] = new Vector2(0.0f, 0.0f);
+        // uvs[3] = new Vector2(0.25f, 0.0f);
+        // uvs[4] = new Vector2(0.25f, 0.5f);
+        // uvs[5] = new Vector2(0.5f, 0.5f);
+        // uvs[6] = new Vector2(0.25f, 0.0f);
+        // uvs[7] = new Vector2(0.5f, 0.0f);
 
         mesh.vertices = vertices;
 
