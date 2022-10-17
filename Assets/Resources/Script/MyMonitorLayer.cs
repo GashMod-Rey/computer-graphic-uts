@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyMonitorLCD : MonoBehaviour
+public class MyMonitorLayer : MonoBehaviour
 {
     [SerializeField]
     public Material chairMaterial;
@@ -19,13 +19,13 @@ public class MyMonitorLCD : MonoBehaviour
 
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(0, 2.25f, 0);
-        vertices[1] = new Vector3(0, 2.25f, 0.75f);
+        vertices[1] = new Vector3(0, 2.25f, 0);
         vertices[2] = new Vector3(9, 2.25f, 0);
-        vertices[3] = new Vector3(9, 2.25f, 0.75f);
+        vertices[3] = new Vector3(9, 2.25f, 0);
         vertices[4] = new Vector3(0, 6.25f, 0);
-        vertices[5] = new Vector3(0, 6.25f, 0.75f);
+        vertices[5] = new Vector3(0, 6.25f, 0);
         vertices[6] = new Vector3(9, 6.25f, 0);
-        vertices[7] = new Vector3(9, 6.25f, 0.75f);
+        vertices[7] = new Vector3(9, 6.25f, 0);
 
         // uvs[0] = new Vector2(0.0f, 0.5f);
         // uvs[1] = new Vector2(0.25f, 0.5f);
