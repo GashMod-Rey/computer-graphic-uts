@@ -15,7 +15,8 @@ public class MyMonitorLayer : MonoBehaviour
         Mesh mesh = new Mesh();
         var vertices = new Vector3[8];
         var uvs = new Vector2[vertices.Length];
-        myTexture = Resources.Load<Texture>("Textures/carbon");
+        myTexture = Resources.Load<Texture>("Textures/LCDTexture");
+        chairMaterial.mainTexture = myTexture;
 
         // Titik-titik tangkai monitor
         vertices[0] = new Vector3(0, 2.25f, 0);
@@ -27,14 +28,14 @@ public class MyMonitorLayer : MonoBehaviour
         vertices[6] = new Vector3(9, 6.25f, 0);
         vertices[7] = new Vector3(9, 6.25f, 0);
 
-        // uvs[0] = new Vector2(0.0f, 0.5f);
-        // uvs[1] = new Vector2(0.25f, 0.5f);
-        // uvs[2] = new Vector2(0.0f, 0.0f);
-        // uvs[3] = new Vector2(0.25f, 0.0f);
-        // uvs[4] = new Vector2(0.25f, 0.5f);
-        // uvs[5] = new Vector2(0.5f, 0.5f);
-        // uvs[6] = new Vector2(0.25f, 0.0f);
-        // uvs[7] = new Vector2(0.5f, 0.0f);
+        uvs[0] = new Vector2(0.0f, 0.5f);
+        uvs[1] = new Vector2(0.25f, 0.5f);
+        uvs[2] = new Vector2(0.0f, 0.0f);
+        uvs[3] = new Vector2(0.25f, 0.0f);
+        uvs[4] = new Vector2(0.25f, 0.5f);
+        uvs[5] = new Vector2(0.5f, 0.5f);
+        uvs[6] = new Vector2(0.25f, 0.0f);
+        uvs[7] = new Vector2(0.5f, 0.0f);
 
         mesh.vertices = vertices;
 
