@@ -9,6 +9,7 @@ public class MyMouse : MonoBehaviour {
 	private Mesh mesh;
 	private Vector3[] vertices;
 	private Vector3[] normals;
+	private Color32[] cubeUV;
 
 	private void Awake () {
 		Generate();
@@ -30,6 +31,7 @@ public class MyMouse : MonoBehaviour {
 			(ySize - 1) * (zSize - 1)) * 2;
 		vertices = new Vector3[cornerVertices + edgeVertices + faceVertices];
 		normals = new Vector3[vertices.Length];
+		cubeUV = new Color32[vertices.Length];
 
 		int v = 0;
 		for (int y = 0; y <= ySize; y++) {
@@ -59,12 +61,16 @@ public class MyMouse : MonoBehaviour {
 
 		mesh.vertices = vertices;
 		mesh.normals = normals;
+		mesh.colors32 = cubeUV;
 	}
 
 	private void SetVertex (int i, int x, int y, int z) {
 		Vector3 inner = vertices[i] = new Vector3(x, y, z);
 
-		if (x < roundness) {
+		if (x == xSize) {
+			inner.x = x;
+		}
+		else if(x < roundness) {
 			inner.x = roundness;
 		}
 		else if (x > xSize - roundness) {
@@ -73,49 +79,63 @@ public class MyMouse : MonoBehaviour {
 		if (y > ySize - roundness) {
 			inner.y = ySize - roundness;
 		}
+		else
+		{
+			inner.y = y;
+		}
+		inner.z = z;
 
 		if(x == xSize) {
-			inner.x = xSize;
 			normals[i] = (vertices[i] - inner).normalized;
 			vertices[i] = inner + normals[i];
+			normals[i] = (inner).normalized;
 		}
 		else
 		{
 			normals[i] = (vertices[i] - inner).normalized;
 			vertices[i] = inner + normals[i] * roundness;
+			normals[i] = (inner).normalized;
 		}
+
+		cubeUV[i] = new Color32((byte)x, (byte)y, (byte)z, 0);
 	}
 
 	private void CreateTriangles () {
-		int[] trianglesZ = new int[(xSize * ySize) * 12];
-		int[] trianglesX = new int[(ySize * zSize) * 12];
-		int[] trianglesY = new int[(xSize * zSize) * 12];
+		int[] trianglesZP = new int[(xSize * ySize) * 12];
+		int[] trianglesXP = new int[(ySize * zSize) * 12];
+		int[] trianglesYP = new int[(xSize * zSize) * 12];
+		int[] trianglesZM = new int[(xSize * ySize) * 12];
+		int[] trianglesXM = new int[(ySize * zSize) * 12];
+		int[] trianglesYM = new int[(xSize * zSize) * 12];
 		int ring = (xSize + zSize) * 2;
 		int tZ = 0, tX = 0, tY = 0, v = 0;
     
         for (int y = 0; y < ySize; y++, v++) {
 			for (int q = 0; q < xSize; q++, v++) {
-				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+				tZ = SetQuad(trianglesZP, tZ, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < zSize; q++, v++) {
-				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
+				tX = SetQuad(trianglesXP, tX, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < xSize; q++, v++) {
-				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+				tZ = SetQuad(trianglesZM, tZ, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < zSize - 1; q++, v++) {
-				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
+				tX = SetQuad(trianglesXM, tX, v, v + 1, v + ring, v + ring + 1);
 			}
-			tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
+			tX = SetQuad(trianglesXM, tX, v, v - ring + 1, v + ring, v + 1);
 		}
 
-        tY = CreateTopFace(trianglesY, tY, ring);
-		tY = CreateBottomFace(trianglesY, tY, ring);
+        tY = CreateTopFace(trianglesYP, tY, ring);
+		tY = CreateBottomFace(trianglesYM, tY, ring);
 
-		mesh.subMeshCount = 3;
-		mesh.SetTriangles(trianglesZ, 0);
-		mesh.SetTriangles(trianglesX, 1);
-		mesh.SetTriangles(trianglesY, 2);
+		mesh.subMeshCount = 6;
+		mesh.SetTriangles(trianglesZP, 0);
+		mesh.SetTriangles(trianglesXP, 1);
+		mesh.SetTriangles(trianglesYP, 2);
+		mesh.SetTriangles(trianglesZM, 3);
+		mesh.SetTriangles(trianglesXM, 4);
+		mesh.SetTriangles(trianglesYM, 5);
 	}
 
 	private int CreateTopFace (int[] triangles, int t, int ring) {
