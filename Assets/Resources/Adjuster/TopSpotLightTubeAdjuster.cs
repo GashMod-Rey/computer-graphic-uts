@@ -6,9 +6,9 @@ using UnityEngine;
 public class TopSpotLightTubeAdjuster : MonoBehaviour
 {
     bool isBackward = false;
-    int spinSpeed = 2;
+    float spinSpeed = 2f;
     Vector3 RotateAmountX = new Vector3(50.0f, 0f, 0.0f);
-    Vector3 TranslateAmountYZ = new Vector3(0.0f, 0.8f/2.1f, -1.2f/2.1f);
+    Vector3 TranslateAmountYZ = new Vector3(0.0f, 0.8f/2f, -1.2f/2f);
     // Start is called before the first frame update
     void Start()
     {

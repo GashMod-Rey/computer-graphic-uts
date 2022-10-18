@@ -6,7 +6,7 @@ using UnityEngine;
 public class TopPointLightAdjuster : MonoBehaviour
 {
     bool isBackward = false;
-    int spinSpeed = 2;
+    float spinSpeed = 2.0f;
     Vector3 RotateAmountX = new Vector3(50.0f, 0f, 0.0f);
     Vector3 RotateAmountY = new Vector3(0.0f, 50.0f, 0.0f);
     Light lt;
