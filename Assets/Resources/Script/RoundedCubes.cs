@@ -73,14 +73,19 @@ public class RoundedCubes : MonoBehaviour
 		else if (x > xSize - roundness) {
 			inner.x = xSize - roundness;
 		}
+		if (y < roundness) {
+			inner.y = roundness;
+		}
+		else if (y > ySize - roundness) {
+			inner.y = ySize - roundness;
+		}
 		if (z < roundness) {
 			inner.z = roundness;
 		}
 		else if (z > zSize - roundness) {
 			inner.z = zSize - roundness;
 		}
-		inner.y = y - roundness;
-
+		
 		normals[i] = (vertices[i] - inner).normalized;
 		vertices[i] = inner + normals[i] * roundness;
 		cubeUV[i] = new Color32((byte)x, (byte)y, (byte)z, 0);
