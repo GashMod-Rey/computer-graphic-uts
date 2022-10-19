@@ -1,4 +1,4 @@
-Shader "Custom/Mouse Shader" {
+Shader "Custom/Full Texture Shader For Panggung" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -28,16 +28,16 @@ Shader "Custom/Mouse Shader" {
         void vert (inout appdata_full v, out Input o) {
 			UNITY_INITIALIZE_OUTPUT(Input, o);
             #if defined(_FACES_X)
-				v.color.y /= 2;
-				v.color.z /= 2;
+				v.color.y /= 4;
+				v.color.z /= 15;
 				o.cubeUV = v.color.yz * 255;
 			#elif defined(_FACES_Y)
-				v.color.x /= 5;
-				v.color.z /= 2;
+				v.color.x /= 20;
+				v.color.z /= 15;
 				o.cubeUV = v.color.xz * 255;
 			#elif defined(_FACES_Z)
-				v.color.x /= 5;
-				v.color.y /= 2;
+				v.color.x /= 20;
+				v.color.y /= 4;
 				o.cubeUV = v.color.xy * 255;
 			#endif
 		}

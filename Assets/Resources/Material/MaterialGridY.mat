@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MaterialGridY
-  m_Shader: {fileID: 4800000, guid: fd4e725b33b90634e9759a1d9281926f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8d11d7b42dc9cba4c8455966a1b685f8, type: 3}
   m_ValidKeywords:
   - _FACES_Y
   m_InvalidKeywords: []

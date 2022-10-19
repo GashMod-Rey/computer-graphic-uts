@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class RoundedCubes : MonoBehaviour
+public class BackDrop : MonoBehaviour
 {
     public int xSize, ySize, zSize;
-    public float roundness;
+    public int roundness;
 
     private Mesh mesh;
     private Vector3[] vertices;
@@ -33,6 +33,10 @@ public class RoundedCubes : MonoBehaviour
         normals = new Vector3[vertices.Length];
 		cubeUV = new Color32[vertices.Length];
 
+		Shader.SetGlobalFloat("_xSize", xSize);
+		Shader.SetGlobalFloat("_ySize", ySize);
+		Shader.SetGlobalFloat("_zSize", zSize);
+		
         int v = 0;
         for (int y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++) {
@@ -85,7 +89,7 @@ public class RoundedCubes : MonoBehaviour
 		else if (z > zSize - roundness) {
 			inner.z = zSize - roundness;
 		}
-
+		
 		normals[i] = (vertices[i] - inner).normalized;
 		vertices[i] = inner + normals[i] * roundness;
 		cubeUV[i] = new Color32((byte)x, (byte)y, (byte)z, 0);
@@ -162,21 +166,22 @@ public class RoundedCubes : MonoBehaviour
 	}
 
     private void CreateTriangles() {
-        int[] trianglesZ = new int[(xSize * ySize) * 12];
+        int[] trianglesZP = new int[(xSize * ySize) * 12];
 		int[] trianglesX = new int[(ySize * zSize) * 12];
 		int[] trianglesY = new int[(xSize * zSize) * 12];
+		int[] trianglesZM = new int[(xSize * ySize) * 12];
 		int ring = (xSize + zSize) * 2;
 		int tZ = 0, tX = 0, tY = 0, v = 0;
     
         for (int y = 0; y < ySize; y++, v++) {
 			for (int q = 0; q < xSize; q++, v++) {
-				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+				tZ = SetQuad(trianglesZP, tZ, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < zSize; q++, v++) {
 				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < xSize; q++, v++) {
-				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+				tZ = SetQuad(trianglesZM, tZ, v, v + 1, v + ring, v + ring + 1);
 			}
 			for (int q = 0; q < zSize - 1; q++, v++) {
 				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
@@ -187,9 +192,10 @@ public class RoundedCubes : MonoBehaviour
         tY = CreateTopFace(trianglesY, tY, ring);
 		tY = CreateBottomFace(trianglesY, tY, ring);
 
-		mesh.subMeshCount = 3;
-		mesh.SetTriangles(trianglesZ, 0);
+		mesh.subMeshCount = 4;
+		mesh.SetTriangles(trianglesZM, 0);
 		mesh.SetTriangles(trianglesX, 1);
 		mesh.SetTriangles(trianglesY, 2);
+		mesh.SetTriangles(trianglesZP, 3);
     }
 }

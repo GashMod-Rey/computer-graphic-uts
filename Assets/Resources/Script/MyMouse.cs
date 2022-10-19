@@ -33,6 +33,10 @@ public class MyMouse : MonoBehaviour {
 		normals = new Vector3[vertices.Length];
 		cubeUV = new Color32[vertices.Length];
 
+		Shader.SetGlobalFloat("_xSize", xSize);
+		Shader.SetGlobalFloat("_ySize", ySize);
+		Shader.SetGlobalFloat("_zSize", zSize);
+		
 		int v = 0;
 		for (int y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++) {

@@ -136,124 +136,12 @@ public class MyChair : MonoBehaviour
         vertices[94] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s + jarakKaki + lebarAlas);
         vertices[95] = new Vector3(s + jarakKaki - s4 + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s + jarakKaki + lebarAlas);
 
-        
-
         mesh.vertices = vertices;
-
-        var colors = new Color32[vertices.Length];
-        
-        // Warna kaki kursi: 
-        colors[0] = new Color32(128, 0, 0, 255);
-        colors[1] = new Color32(128, 0, 0, 255);
-        colors[2] = new Color32(128, 0, 0, 255);
-        colors[3] = new Color32(128, 0, 0, 255);
-        colors[4] = new Color32(128, 0, 0, 255);
-        colors[5] = new Color32(128, 0, 0, 255);
-        colors[6] = new Color32(128, 0, 0, 255);
-        colors[7] = new Color32(128, 0, 0, 255);
-        colors[8] = new Color32(128, 0, 0, 255);
-        colors[9] = new Color32(128, 0, 0, 255);
-        colors[10] = new Color32(128, 0, 0, 255);
-        colors[11] = new Color32(128, 0, 0, 255);
-        colors[12] = new Color32(128, 0, 0, 255);
-        colors[13] = new Color32(128, 0, 0, 255);
-        colors[14] = new Color32(128, 0, 0, 255);
-        colors[15] = new Color32(128, 0, 0, 255);
-        colors[16] = new Color32(128, 0, 0, 255);
-        colors[17] = new Color32(128, 0, 0, 255);
-        colors[18] = new Color32(128, 0, 0, 255);
-        colors[19] = new Color32(128, 0, 0, 255);
-        colors[20] = new Color32(128, 0, 0, 255);
-        colors[21] = new Color32(128, 0, 0, 255);
-        colors[22] = new Color32(128, 0, 0, 255);
-        colors[23] = new Color32(128, 0, 0, 255);
-        colors[24] = new Color32(128, 0, 0, 255);
-        colors[25] = new Color32(128, 0, 0, 255);
-        colors[26] = new Color32(128, 0, 0, 255);
-        colors[27] = new Color32(128, 0, 0, 255);
-        colors[28] = new Color32(128, 0, 0, 255);
-        colors[29] = new Color32(128, 0, 0, 255);
-        colors[30] = new Color32(128, 0, 0, 255);
-        colors[31] = new Color32(128, 0, 0, 255);
-
-        // Warna alas kursi: 
-        colors[32] = new Color32(230, 0, 0, 255);
-        colors[33] = new Color32(230, 0, 0, 255);
-        colors[34] = new Color32(230, 0, 0, 255);
-        colors[35] = new Color32(230, 0, 0, 255);
-        colors[36] = new Color32(230, 0, 0, 255);
-        colors[37] = new Color32(230, 0, 0, 255);
-        colors[38] = new Color32(230, 0, 0, 255);
-        colors[39] = new Color32(230, 0, 0, 255);
-
-        // Warna penyangga sandaran kursi: 
-        colors[40] = new Color32(179, 89, 0, 255);
-        colors[41] = new Color32(179, 89, 0, 255);
-        colors[42] = new Color32(179, 89, 0, 255);
-        colors[43] = new Color32(179, 89, 0, 255);
-        colors[44] = new Color32(179, 89, 0, 255);
-        colors[45] = new Color32(179, 89, 0, 255);
-        colors[46] = new Color32(179, 89, 0, 255);
-        colors[47] = new Color32(179, 89, 0, 255);
-        colors[48] = new Color32(179, 89, 0, 255);
-        colors[49] = new Color32(179, 89, 0, 255);
-        colors[50] = new Color32(179, 89, 0, 255);
-        colors[51] = new Color32(179, 89, 0, 255);
-        colors[52] = new Color32(179, 89, 0, 255);
-        colors[53] = new Color32(179, 89, 0, 255);
-        colors[54] = new Color32(179, 89, 0, 255);
-        colors[55] = new Color32(179, 89, 0, 255);
-
-        // Warna sandaran kursi: 
-        colors[56] = new Color32(255, 195, 77, 255);
-        colors[57] = new Color32(255, 195, 77, 255);
-        colors[58] = new Color32(255, 195, 77, 255);
-        colors[59] = new Color32(255, 195, 77, 255);
-        colors[60] = new Color32(255, 195, 77, 255);
-        colors[61] = new Color32(255, 195, 77, 255);
-        colors[62] = new Color32(255, 195, 77, 255);
-        colors[63] = new Color32(255, 195, 77, 255);
-
-        // Warna armrest:
-        colors[64] = new Color32(255, 195, 77, 255);
-        colors[65] = new Color32(255, 195, 77, 255);
-        colors[66] = new Color32(255, 195, 77, 255);
-        colors[67] = new Color32(255, 195, 77, 255);
-        colors[68] = new Color32(255, 195, 77, 255);
-        colors[69] = new Color32(255, 195, 77, 255);
-        colors[70] = new Color32(255, 195, 77, 255);
-        colors[71] = new Color32(255, 195, 77, 255);
-        colors[72] = new Color32(255, 195, 77, 255);
-        colors[73] = new Color32(255, 195, 77, 255);
-        colors[74] = new Color32(255, 195, 77, 255);
-        colors[75] = new Color32(255, 195, 77, 255);
-        colors[76] = new Color32(255, 195, 77, 255);
-        colors[77] = new Color32(255, 195, 77, 255);
-        colors[78] = new Color32(255, 195, 77, 255);
-        colors[79] = new Color32(255, 195, 77, 255);
-        colors[80] = new Color32(102, 0, 0, 255);
-        colors[81] = new Color32(102, 0, 0, 255);
-        colors[82] = new Color32(102, 0, 0, 255);
-        colors[83] = new Color32(102, 0, 0, 255);
-        colors[84] = new Color32(102, 0, 0, 255);
-        colors[85] = new Color32(102, 0, 0, 255);
-        colors[86] = new Color32(102, 0, 0, 255);
-        colors[87] = new Color32(102, 0, 0, 255);
-        colors[88] = new Color32(102, 0, 0, 255);
-        colors[89] = new Color32(102, 0, 0, 255);
-        colors[90] = new Color32(102, 0, 0, 255);
-        colors[91] = new Color32(102, 0, 0, 255);
-        colors[92] = new Color32(102, 0, 0, 255);
-        colors[93] = new Color32(102, 0, 0, 255);
-        colors[94] = new Color32(102, 0, 0, 255);
-        colors[95] = new Color32(102, 0, 0, 255);
-
-        mesh.colors32 = colors;
 
         mesh.triangles = new int[] {
             // Segitiga untuk kaki kursi
-            0, 1, 2,
-            3, 2, 1,
+            2, 1, 0,
+            1, 2, 3,
             4, 5, 6,
             7, 6, 5,
             6, 2, 0,
@@ -264,8 +152,8 @@ public class MyChair : MonoBehaviour
             7, 5, 3,
             0, 1, 4,
             1, 5, 4,
-            8, 9, 10,
-            11, 10, 9,
+            10, 9, 8,
+            9, 10, 11,
             12, 13, 14,
             15, 14, 13,
             14, 10, 8,
@@ -276,8 +164,8 @@ public class MyChair : MonoBehaviour
             15, 13, 11,
             8, 9, 12,
             9, 13, 12,
-            16, 17, 18,
-            19, 18, 17,
+            18, 17, 16,
+            17, 18, 19,
             20, 21, 22,
             23, 22, 21,
             22, 18, 16,
@@ -288,8 +176,8 @@ public class MyChair : MonoBehaviour
             23, 21, 19,
             16, 17, 20,
             17, 21, 20,
-            24, 25, 26,
-            27, 26, 25,
+            26, 25, 24,
+            25, 26, 27,
             28, 29, 30,
             31, 30, 29,
             30, 26, 24,
