@@ -1,4 +1,4 @@
-Shader "Custom/Full Texture Shader For Atap" {
+Shader "Custom/Full Texture Shader For Tangga" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -28,16 +28,12 @@ Shader "Custom/Full Texture Shader For Atap" {
         void vert (inout appdata_full v, out Input o) {
 			UNITY_INITIALIZE_OUTPUT(Input, o);
             #if defined(_FACES_X)
-				v.color.y /= 1;
-				v.color.z /= 15;
 				o.cubeUV = v.color.yz * 255;
 			#elif defined(_FACES_Y)
-				v.color.x /= 20;
-				v.color.z /= 15;
+				v.color.x /= 4;
 				o.cubeUV = v.color.xz * 255;
 			#elif defined(_FACES_Z)
-				v.color.x /= 20;
-				v.color.y /= 1;
+				v.color.x /= 4;
 				o.cubeUV = v.color.xy * 255;
 			#endif
 		}

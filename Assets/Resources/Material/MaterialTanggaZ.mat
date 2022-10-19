@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DalamAtapPanggung
-  m_Shader: {fileID: 4800000, guid: 2202225e3763fba479aace7cde7c2610, type: 3}
+  m_Name: MaterialTanggaZ
+  m_Shader: {fileID: 4800000, guid: ae15827bf80f43b43814dc5af9f6fea6, type: 3}
   m_ValidKeywords:
-  - _FACES_Y
+  - _FACES_Z
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9d7a013194a65a7458997314fb769e6f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 054f79a9b26b529479315e94f1204f10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,7 +63,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Faces: 1
+    - _Faces: 2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

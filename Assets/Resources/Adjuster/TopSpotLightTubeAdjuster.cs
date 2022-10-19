@@ -32,10 +32,12 @@ public class TopSpotLightTubeAdjuster : MonoBehaviour
 
             if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).x <= 0) {
                 isBackward = false;
-                transform.position = new Vector3(transform.position.x, 13.03502f, 12.23554f);                
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                transform.position = new Vector3(transform.position.x, 13.03502f, 12.23554f);
             }        
             else if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).x >= 90) {
                 isBackward = true;
+                transform.rotation = Quaternion.Euler(90, 0, 0);                           
             }
         }
         else
@@ -52,10 +54,13 @@ public class TopSpotLightTubeAdjuster : MonoBehaviour
 
             if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).x <= -90) {
                 isBackward = false;
+                transform.rotation = Quaternion.Euler(-90, 0, 0);
             }        
             else if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).x >= 0) {
                 isBackward = true;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
                 transform.position = new Vector3(transform.position.x, 12.49679f, 13.15581f);
+                
             }
         }
     }

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SampingAtapPanggung
-  m_Shader: {fileID: 4800000, guid: 8d11d7b42dc9cba4c8455966a1b685f8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2202225e3763fba479aace7cde7c2610, type: 3}
   m_ValidKeywords:
   - _FACES_X
   m_InvalidKeywords: []

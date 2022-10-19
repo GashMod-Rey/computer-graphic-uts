@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DalamAtapPanggung
-  m_Shader: {fileID: 4800000, guid: 2202225e3763fba479aace7cde7c2610, type: 3}
+  m_Name: MaterialTanggaYAtas
+  m_Shader: {fileID: 4800000, guid: ae15827bf80f43b43814dc5af9f6fea6, type: 3}
   m_ValidKeywords:
   - _FACES_Y
   m_InvalidKeywords: []
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9d7a013194a65a7458997314fb769e6f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 88019dc4ae84a224082c8be8b76bc63b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -77,6 +77,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
