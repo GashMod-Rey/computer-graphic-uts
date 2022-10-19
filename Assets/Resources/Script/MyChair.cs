@@ -289,6 +289,7 @@ public class MyChair : MonoBehaviour
             92, 89, 88,
             92, 93, 89,
         };
+        mesh.RecalculateNormals();
         GetComponent<MeshFilter>().mesh = mesh;
 
         GetComponent<MeshRenderer>().material = chairMaterial;

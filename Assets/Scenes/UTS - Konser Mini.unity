@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &155964276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &200144095
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &322864293
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1681,7 +1681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &419373076
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4533,7 +4533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &933368687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1015931166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5066,7 +5066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1017986978
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6395,7 +6395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1329436834
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7648,7 +7648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1552934180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8248,7 +8248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1595530007
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8447,7 +8447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1641514771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9584,7 +9584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc6a6438e60773439a6cb61b34b248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairMaterial: {fileID: 0}
+  chairMaterial: {fileID: 2100000, guid: 0dce8b69dde03da438a3c736538dd5c1, type: 2}
 --- !u!23 &1828890314
 MeshRenderer:
   m_ObjectHideFlags: 0
