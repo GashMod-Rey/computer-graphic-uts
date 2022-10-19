@@ -19,7 +19,8 @@ public class MyTable : MonoBehaviour
     {
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
-        var vertices = new Vector3[40];
+        var vertices = new Vector3[44];
+        var uvs = new Vector2[vertices.Length];
 
         // Titik-titik Kaki Kursi
         vertices[0] = new Vector3(0, 0, 0);
@@ -55,15 +56,33 @@ public class MyTable : MonoBehaviour
         vertices[30] = new Vector3(s + jarakKaki, kakiHeight, jarakKaki/2);
         vertices[31] = new Vector3(s + jarakKaki, kakiHeight, s + jarakKaki/2);
 
-        // Titik-titik Alas Kursi
+        // sisi bawah papan meja
         vertices[32] = new Vector3(0 - lebarAlas, kakiHeight, 0 - lebarAlas);
         vertices[33] = new Vector3(s + lebarAlas + jarakKaki, kakiHeight, 0 - lebarAlas);
         vertices[34] = new Vector3(0 - lebarAlas, kakiHeight, s + jarakKaki/2 + lebarAlas);
         vertices[35] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight, s + jarakKaki/2 + lebarAlas);
+        // sisi atas papan meja
         vertices[36] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
         vertices[37] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
         vertices[38] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);
-        vertices[39] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);     
+        vertices[39] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);
+
+        vertices[40] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[41] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[42] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);
+        vertices[43] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s + jarakKaki/2 + lebarAlas);
+
+        for(int i=0; i<37; i += 3){
+            uvs[i] = new Vector2(0.0f, 0.0f);
+            uvs[i+1] = new Vector2(0.0f, 1.0f);
+            uvs[i+2] = new Vector2(0.5f, 0.0f);
+            uvs[i+3] = new Vector2(0.5f, 1.0f);
+        }
+        
+        uvs[40] = new Vector2(1.0f, 1.0f);
+        uvs[41] = new Vector2(0.5f, 1.0f);
+        uvs[42] = new Vector2(1.0f, 0.0f);
+        uvs[43] = new Vector2(0.5f, 0.0f);
 
         mesh.vertices = vertices;
 
@@ -131,8 +150,16 @@ public class MyTable : MonoBehaviour
             35, 39, 38,
             32, 34, 38,
             38, 36, 32,
+
+            42, 41, 40,
+            41, 42, 43,
         };
+
+        mesh.uv = uvs;
+
         GetComponent<MeshFilter>().mesh = mesh;
+
+        mesh.RecalculateNormals();
 
         GetComponent<MeshRenderer>().material = chairMaterial;
     }
