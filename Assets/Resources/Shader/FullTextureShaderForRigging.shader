@@ -1,4 +1,4 @@
-Shader "Custom/Full Texture Shader For Backdrop" {
+Shader "Custom/Full Texture Shader For Rigging" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -24,22 +24,19 @@ Shader "Custom/Full Texture Shader For Backdrop" {
 		half _Glossiness;
 		half _Metallic;
 		fixed4 _Color;
-		uniform float _xSize;
-		uniform float _ySize;
-		uniform float _zSize;
 
         void vert (inout appdata_full v, out Input o) {
 			UNITY_INITIALIZE_OUTPUT(Input, o);
             #if defined(_FACES_X)
 				v.color.y /= 10;
-				v.color.z /= 4;
+				v.color.z /= 2;
 				o.cubeUV = v.color.yz * 255;
 			#elif defined(_FACES_Y)
-				v.color.x /= 18;
-				v.color.z /= 4;
+				v.color.x /= 2;
+				v.color.z /= 2;
 				o.cubeUV = v.color.xz * 255;
 			#elif defined(_FACES_Z)
-				v.color.x /= 18;
+				v.color.x /= 2;
 				v.color.y /= 10;
 				o.cubeUV = v.color.xy * 255;
 			#endif

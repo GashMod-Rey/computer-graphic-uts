@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class RoundedCube : MonoBehaviour
+public class AtapPanggung : MonoBehaviour
 {
     public int xSize, ySize, zSize;
     public float roundness;
@@ -33,10 +33,6 @@ public class RoundedCube : MonoBehaviour
         normals = new Vector3[vertices.Length];
 		cubeUV = new Color32[vertices.Length];
 
-		Shader.SetGlobalFloat("_xSize", xSize);
-		Shader.SetGlobalFloat("_ySize", ySize);
-		Shader.SetGlobalFloat("_zSize", zSize);
-		
         int v = 0;
         for (int y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++) {
@@ -168,7 +164,8 @@ public class RoundedCube : MonoBehaviour
     private void CreateTriangles() {
         int[] trianglesZ = new int[(xSize * ySize) * 12];
 		int[] trianglesX = new int[(ySize * zSize) * 12];
-		int[] trianglesY = new int[(xSize * zSize) * 12];
+		int[] trianglesYP = new int[(xSize * zSize) * 12];
+		int[] trianglesYM = new int[(xSize * zSize) * 12];
 		int ring = (xSize + zSize) * 2;
 		int tZ = 0, tX = 0, tY = 0, v = 0;
     
@@ -188,12 +185,13 @@ public class RoundedCube : MonoBehaviour
 			tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
 		}
 
-        tY = CreateTopFace(trianglesY, tY, ring);
-		tY = CreateBottomFace(trianglesY, tY, ring);
+        tY = CreateTopFace(trianglesYP, tY, ring);
+		tY = CreateBottomFace(trianglesYM, tY, ring);
 
-		mesh.subMeshCount = 3;
+		mesh.subMeshCount = 4;
 		mesh.SetTriangles(trianglesZ, 0);
 		mesh.SetTriangles(trianglesX, 1);
-		mesh.SetTriangles(trianglesY, 2);
+		mesh.SetTriangles(trianglesYP, 2);
+		mesh.SetTriangles(trianglesYM, 3);
     }
 }
