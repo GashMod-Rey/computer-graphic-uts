@@ -7,7 +7,6 @@ public class BottomPointLightAdjuster : MonoBehaviour
 {
     bool isBackward = false;
     public float spinSpeed = 2;
-    Vector3 RotateAmountX = new Vector3(50.0f, 0f, 0.0f);
     Vector3 RotateAmountY = new Vector3(0.0f, 50.0f, 0.0f);
     Light lt;
     // Start is called before the first frame update
