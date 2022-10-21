@@ -28,7 +28,8 @@ public class MyChair : MonoBehaviour
     {
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
-        var vertices = new Vector3[96];
+        var vertices = new Vector3[192];
+        var uvs = new Vector2[vertices.Length];
 
         // Titik-titik Kaki Kursi
         vertices[0] = new Vector3(0, 0, 0);
@@ -136,6 +137,112 @@ public class MyChair : MonoBehaviour
         vertices[94] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s + jarakKaki + lebarAlas);
         vertices[95] = new Vector3(s + jarakKaki - s4 + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s + jarakKaki + lebarAlas);
 
+        // Duplikat-1
+        vertices[96] = new Vector3(0, 0, 0);
+        vertices[97] = new Vector3(0, 0, s);
+        vertices[98] = new Vector3(s, 0, 0);
+        vertices[99] = new Vector3(s, 0, s);
+        vertices[100] = new Vector3(0, kakiHeight, 0);
+        vertices[101] = new Vector3(0, kakiHeight, s);
+        vertices[102] = new Vector3(s, kakiHeight, 0);
+        vertices[103] = new Vector3(s, kakiHeight, s);
+        vertices[104] = new Vector3(jarakKaki, 0, 0);
+        vertices[105] = new Vector3(jarakKaki, 0, s);
+        vertices[106] = new Vector3(s + jarakKaki, 0, 0);
+        vertices[107] = new Vector3(s + jarakKaki, 0, s);
+        vertices[108] = new Vector3(jarakKaki, kakiHeight, 0);
+        vertices[109] = new Vector3(jarakKaki, kakiHeight, s);
+        vertices[110] = new Vector3(s + jarakKaki, kakiHeight, 0);
+        vertices[111] = new Vector3(s + jarakKaki, kakiHeight, s);
+        vertices[112] = new Vector3(0, 0, jarakKaki);
+        vertices[113] = new Vector3(0, 0, s + jarakKaki);
+        vertices[114] = new Vector3(s, 0, jarakKaki);
+        vertices[115] = new Vector3(s, 0, s + jarakKaki);
+        vertices[116] = new Vector3(0, kakiHeight, jarakKaki);
+        vertices[117] = new Vector3(0, kakiHeight, s + jarakKaki);
+        vertices[118] = new Vector3(s, kakiHeight, jarakKaki);
+        vertices[119] = new Vector3(s, kakiHeight, s + jarakKaki);
+        vertices[120] = new Vector3(jarakKaki, 0, jarakKaki);
+        vertices[121] = new Vector3(jarakKaki, 0, s + jarakKaki);
+        vertices[122] = new Vector3(s + jarakKaki, 0, jarakKaki);
+        vertices[123] = new Vector3(s + jarakKaki, 0, s + jarakKaki);
+        vertices[124] = new Vector3(jarakKaki, kakiHeight, jarakKaki);
+        vertices[125] = new Vector3(jarakKaki, kakiHeight, s + jarakKaki);
+        vertices[126] = new Vector3(s + jarakKaki, kakiHeight, jarakKaki);
+        vertices[127] = new Vector3(s + jarakKaki, kakiHeight, s + jarakKaki);
+
+        // Duplikat-2
+        vertices[128] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[129] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, s2 - lebarAlas);
+        vertices[130] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[131] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas, s2 - lebarAlas);
+        vertices[132] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas + sandaranHeight, 0 - lebarAlas);
+        vertices[133] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas + sandaranHeight, s2 - lebarAlas);
+        vertices[134] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas + sandaranHeight, 0 - lebarAlas);
+        vertices[135] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas + sandaranHeight, s2 - lebarAlas);
+        vertices[136] = new Vector3(s - s2 + jarakKaki + lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[137] = new Vector3(s - s2 + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s2 - lebarAlas);
+        vertices[138] = new Vector3(s  + jarakKaki + lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[139] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s2 - lebarAlas);
+        vertices[140] = new Vector3(s - s2 + jarakKaki + lebarAlas, kakiHeight + tebalAlas + sandaranHeight, 0 - lebarAlas);
+        vertices[141] = new Vector3(s - s2 + jarakKaki + lebarAlas, kakiHeight + tebalAlas + sandaranHeight, s2 - lebarAlas);
+        vertices[142] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + sandaranHeight, 0 - lebarAlas);
+        vertices[143] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + sandaranHeight, s2 - lebarAlas);
+
+        // Duplikat-3
+        vertices[144] = new Vector3(0 - lebarAlas + masukanArm, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[145] = new Vector3(0 - lebarAlas + masukanArm + s3, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[146] = new Vector3(0 - lebarAlas + masukanArm, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[147] = new Vector3(0 - lebarAlas + masukanArm + s3, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[148] = new Vector3(0 - lebarAlas + masukanArm, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[149] = new Vector3(0 - lebarAlas + masukanArm + s3, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[150] = new Vector3(0 - lebarAlas + masukanArm, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[151] = new Vector3(0 - lebarAlas + masukanArm + s3, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[152] = new Vector3(s + jarakKaki + lebarAlas - masukanArm, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[153] = new Vector3(s + jarakKaki + lebarAlas - masukanArm - s3, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[154] = new Vector3(s + jarakKaki + lebarAlas - masukanArm, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[155] = new Vector3(s + jarakKaki + lebarAlas - masukanArm - s3, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[156] = new Vector3(s + jarakKaki + lebarAlas - masukanArm, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[157] = new Vector3(s + jarakKaki + lebarAlas - masukanArm - s3, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm);
+        vertices[158] = new Vector3(s + jarakKaki + lebarAlas - masukanArm, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[159] = new Vector3(s + jarakKaki + lebarAlas - masukanArm - s3, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas - masukanArm - s3);
+        vertices[160] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas + tinggiArm, s2 - lebarAlas);
+        vertices[161] = new Vector3(s2 - lebarAlas - s4, kakiHeight + tebalAlas + tinggiArm, s2 - lebarAlas);
+        vertices[162] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s2 - lebarAlas);
+        vertices[163] = new Vector3(s2 - lebarAlas - s4, kakiHeight + tebalAlas + tinggiArm + tebalArm, s2 - lebarAlas);
+        vertices[164] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas + tinggiArm, s2 + lebarAlas + jarakKaki);
+        vertices[165] = new Vector3(s2 - lebarAlas - s4, kakiHeight + tebalAlas + tinggiArm, s2 + lebarAlas + jarakKaki);
+        vertices[166] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s2 + lebarAlas + jarakKaki);
+        vertices[167] = new Vector3(s2 - lebarAlas - s4, kakiHeight + tebalAlas + tinggiArm + tebalArm, s2 + lebarAlas + jarakKaki);
+        vertices[168] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + tinggiArm, s - lebarAlas);
+        vertices[169] = new Vector3(s + jarakKaki - s4 + lebarAlas, kakiHeight + tebalAlas + tinggiArm, s - lebarAlas);
+        vertices[170] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s - lebarAlas);
+        vertices[171] = new Vector3(s + jarakKaki - s4 + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s - lebarAlas);
+        vertices[172] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas);
+        vertices[173] = new Vector3(s + jarakKaki - s4 + lebarAlas, kakiHeight + tebalAlas + tinggiArm, s + jarakKaki + lebarAlas);
+        vertices[174] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s + jarakKaki + lebarAlas);
+        vertices[175] = new Vector3(s + jarakKaki - s4 + lebarAlas, kakiHeight + tebalAlas + tinggiArm + tebalArm, s + jarakKaki + lebarAlas);
+
+        // Duplikat-4
+        vertices[176] = new Vector3(0 - lebarAlas, kakiHeight, 0 - lebarAlas);
+        vertices[177] = new Vector3(s + lebarAlas + jarakKaki, kakiHeight, 0 - lebarAlas);
+        vertices[178] = new Vector3(0 - lebarAlas, kakiHeight, s + jarakKaki + lebarAlas);
+        vertices[179] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight, s + jarakKaki + lebarAlas);
+        vertices[180] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[181] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, 0 - lebarAlas);
+        vertices[182] = new Vector3(0 - lebarAlas, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas);
+        vertices[183] = new Vector3(s + jarakKaki + lebarAlas, kakiHeight + tebalAlas, s + jarakKaki + lebarAlas);
+
+        // Duplikat-5
+        vertices[184] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas - turunanSandaran + sandaranHeight, 0 - lebarAlas);
+        vertices[185] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas - turunanSandaran + sandaranHeight, s2 - lebarAlas);
+        vertices[186] = new Vector3(s + jarakKaki - s2 + lebarAlas, kakiHeight + tebalAlas - turunanSandaran + sandaranHeight, 0 - lebarAlas);
+        vertices[187] = new Vector3(s + jarakKaki - s2 + lebarAlas, kakiHeight + tebalAlas - turunanSandaran + sandaranHeight, s2 - lebarAlas);
+        vertices[188] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas - lebarSandaran - turunanSandaran + sandaranHeight, 0 - lebarAlas);
+        vertices[189] = new Vector3(s2 - lebarAlas, kakiHeight + tebalAlas - lebarSandaran - turunanSandaran + sandaranHeight, s2 - lebarAlas);
+        vertices[190] = new Vector3(s + jarakKaki - s2 + lebarAlas, kakiHeight + tebalAlas - lebarSandaran - turunanSandaran + sandaranHeight, 0 - lebarAlas);
+        vertices[191] = new Vector3(s + jarakKaki - s2 + lebarAlas, kakiHeight + tebalAlas - lebarSandaran - turunanSandaran + sandaranHeight, s2 - lebarAlas);
+
         mesh.vertices = vertices;
 
         mesh.triangles = new int[] {
@@ -144,96 +251,92 @@ public class MyChair : MonoBehaviour
             1, 2, 3,
             4, 5, 6,
             7, 6, 5,
-            6, 2, 0,
-            0, 4, 6,
+            96+6, 96+2, 96+0,
+            96+0, 96+4, 96+6,
             7, 3, 2,
             2, 6, 7,
-            5, 1, 3,
-            7, 5, 3,
+            96+5, 96+1, 96+3,
+            96+7, 96+5, 96+3,
             0, 1, 4,
             1, 5, 4,
             10, 9, 8,
             9, 10, 11,
             12, 13, 14,
             15, 14, 13,
-            14, 10, 8,
-            8, 12, 14,
+            96+14, 96+10, 96+8,
+            96+8,  96+12, 96+14,
             15, 11, 10,
             10, 14, 15,
-            13, 9, 11,
-            15, 13, 11,
+            96+13, 96+9, 96+11,
+            96+15, 96+13, 96+11,
             8, 9, 12,
             9, 13, 12,
             18, 17, 16,
             17, 18, 19,
             20, 21, 22,
             23, 22, 21,
-            22, 18, 16,
-            16, 20, 22,
+            96+22, 96+18, 96+16,
+            96+16, 96+20, 96+22,
             23, 19, 18,
             18, 22, 23,
-            21, 17, 19,
-            23, 21, 19,
+            96+21, 96+17, 96+19,
+            96+23, 96+21, 96+19,
             16, 17, 20,
             17, 21, 20,
             26, 25, 24,
             25, 26, 27,
             28, 29, 30,
             31, 30, 29,
-            30, 26, 24,
-            24, 28, 30,
+            96+30, 96+26, 96+24,
+            96+24, 96+28, 96+30,
             31, 27, 26,
             26, 30, 31,
-            29, 25, 27,
-            31, 29, 27,
+            96+29, 96+25, 96+27,
+            96+31, 96+29, 96+27,
             24, 25, 28,
             25, 29, 28,
             
             // Segitiga untuk alas kursi
-            32, 33, 34,
-            35, 34, 33,
-            38, 37, 36,
-            37, 38, 39,
-            36, 33, 32,
-            33, 36, 37,
+            144+32, 144+33, 144+34,
+            144+35, 144+34, 144+33,
+            144+38, 144+37, 144+36,
+            144+37, 144+38, 144+39,
+            144+36, 144+33, 144+32,
+            144+33, 144+36, 144+37,
             39, 35, 33,
             33, 37, 39,
-            38, 34, 35,
-            35, 39, 38,
+            144+38, 144+34, 144+35,
+            144+35, 144+39, 144+38,
             32, 34, 38,
             38, 36, 32,
 
             // Segitiga untuk Penyangga Sandaran Kursi
-            40, 41, 42,
-            43, 42, 41,
-            44, 45, 46,
-            47, 46, 45,
+            88+44, 88+45, 88+46,
+            88+47, 88+46, 88+45,
             46, 42, 40,
             40, 44, 46,
-            47, 43, 42,
-            42, 46, 47,
+            88+47, 88+43, 88+42,
+            88+42, 88+46, 88+47,
             45, 41, 43,
             47, 45, 43,
-            40, 41, 44,
-            41, 45, 44,
-            48, 49, 50,
-            51, 50, 49,
-            52, 53, 54,
-            55, 54, 53,
+            88+40, 88+41, 88+44,
+            88+41, 88+45, 88+44,
+            88+52, 88+53, 88+54,
+            88+55, 88+54, 88+53,
             54, 50, 48,
             48, 52, 54,
-            55, 51, 50,
-            50, 54, 55,
+            88+55, 88+51, 88+50,
+            88+50, 88+54, 88+55,
             53, 49, 51,
             55, 53, 51,
-            48, 49, 52,
-            49, 53, 52,
+            88+48, 88+49, 88+52,
+            88+49, 88+53, 88+52,
 
             // Segitiga untuk sandaran kursi
-            56, 57, 58,
-            59, 58, 57,
-            62, 61, 60,
-            61, 62, 63,
+            128+56, 128+57, 128+58,
+            128+59, 128+58, 128+57,
+            128+62, 128+61, 128+60,
+            128+61, 128+62, 128+63,
             56, 58, 60,
             62, 60, 58,
             59, 61, 63,
@@ -244,52 +347,132 @@ public class MyChair : MonoBehaviour
             67, 66, 65,
             71, 70, 69,
             68, 69, 70,
-            70, 66, 64,
-            64, 68, 70,
+            80+70, 80+66, 80+64,
+            80+64, 80+68, 80+70,
             71, 67, 66,
             66, 70, 71,
-            69, 65, 67,
-            71, 69, 67,
+            80+69, 80+65, 80+67,
+            80+71, 80+69, 80+67,
             64, 65, 68,
             65, 69, 68,
-            72, 73, 74,     
-            75, 74, 74,
-            79, 78, 77,
-            76, 77, 78,
-            78, 74, 72,
-            72, 76, 78,
-            79, 75, 74,
-            74, 78, 79,
-            77, 73, 75,
-            79, 77, 75,
-            72, 73, 76,
-            73, 77, 76,
-            82, 81, 80,
-            81, 82, 83,
-            86, 85, 84,
-            85, 86, 87,
-            80, 82, 86,
-            86, 84, 80,
+            74, 73, 72,     
+            73, 74, 75,
+            77, 78, 79,
+            78, 77, 76,
+            80+72, 80+74, 80+78,
+            80+78, 80+76, 80+72,
+            74, 75, 79,
+            79, 78, 74,
+            80+75, 80+73, 80+77,
+            80+75, 80+77, 80+79,
+            76, 73, 72,
+            76, 77, 73,
+            80+86, 80+85, 80+84,
+            80+85, 80+86, 80+87,
+            80+80, 80+82, 80+86,
+            80+86, 80+84, 80+80,
             82, 83, 87,
             87, 86, 82,
-            83, 81, 85,
-            83, 85, 87,
+            80+83, 80+81, 80+85,
+            80+83, 80+85, 80+87,
             84, 81, 80,
             84, 85, 81,
-            90, 89, 88,
-            89, 90, 91,
-            94, 93, 92,
-            93, 94, 95,
-            88, 90, 94,
-            94, 92, 88,
+            80+94, 80+93, 80+92,
+            80+93, 80+94, 80+95,
+            80+88, 80+90, 80+94,
+            80+94, 80+92, 80+88,
             90, 91, 95,
             95, 94, 90,
-            91, 89, 93,
-            91, 93, 95,
+            80+91, 80+89, 80+93,
+            80+91, 80+93, 80+95,
             92, 89, 88,
             92, 93, 89,
         };
+
+        for(int i=0; i<32; i += 8){
+            uvs[i] = new Vector2(0.0f, 0.0f);
+            uvs[i+1] = new Vector2(0.0f, 1.0f);
+            uvs[i+2] = new Vector2(0.5f, 0.0f);
+            uvs[i+3] = new Vector2(0.5f, 1.0f);
+            uvs[i+4] = new Vector2(0.5f, 0.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.0f, 0.0f);
+            uvs[i+7] = new Vector2(0.0f, 1.0f);   
+        }
+        for(int i=32; i<64; i += 8){
+            uvs[i] = new Vector2(0.0f, 1.0f); 
+            uvs[i+1] = new Vector2(0.0f, 1.0f); 
+            uvs[i+2] = new Vector2(0.0f, 0.0f);
+            uvs[i+3] = new Vector2(0.0f, 0.0f);
+            uvs[i+4] = new Vector2(0.5f, 1.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.5f, 0.0f);
+            uvs[i+7] = new Vector2(0.5f, 0.0f);
+        }
+        for(int i=64; i<96; i += 8){
+            uvs[i] = new Vector2(0.0f, 0.0f);
+            uvs[i+1] = new Vector2(0.0f, 1.0f);
+            uvs[i+2] = new Vector2(0.5f, 0.0f);
+            uvs[i+3] = new Vector2(0.5f, 1.0f);
+            uvs[i+4] = new Vector2(0.5f, 0.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.0f, 0.0f);
+            uvs[i+7] = new Vector2(0.0f, 1.0f);   
+        }
+        for(int i=96; i<128; i += 8){
+            uvs[i] = new Vector2(0.0f, 1.0f); 
+            uvs[i+1] = new Vector2(0.0f, 1.0f); 
+            uvs[i+2] = new Vector2(0.0f, 0.0f);
+            uvs[i+3] = new Vector2(0.0f, 0.0f);
+            uvs[i+4] = new Vector2(0.5f, 1.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.5f, 0.0f);
+            uvs[i+7] = new Vector2(0.5f, 0.0f);
+        }
+        for(int i=128; i<144; i += 8){
+            uvs[i] = new Vector2(0.0f, 0.0f);
+            uvs[i+1] = new Vector2(0.0f, 1.0f);
+            uvs[i+2] = new Vector2(0.5f, 0.0f);
+            uvs[i+3] = new Vector2(0.5f, 1.0f);
+            uvs[i+4] = new Vector2(0.5f, 0.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.0f, 0.0f);
+            uvs[i+7] = new Vector2(0.0f, 1.0f);   
+        }
+        for(int i=144; i<176; i += 8){
+            uvs[i] = new Vector2(0.0f, 1.0f); 
+            uvs[i+1] = new Vector2(0.0f, 1.0f); 
+            uvs[i+2] = new Vector2(0.0f, 0.0f);
+            uvs[i+3] = new Vector2(0.0f, 0.0f);
+            uvs[i+4] = new Vector2(0.5f, 1.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.5f, 0.0f);
+            uvs[i+7] = new Vector2(0.5f, 0.0f);
+        }
+        for(int i=176; i<183; i += 8){
+            uvs[i] = new Vector2(0.0f, 0.0f);
+            uvs[i+1] = new Vector2(0.0f, 1.0f);
+            uvs[i+2] = new Vector2(0.5f, 0.0f);
+            uvs[i+3] = new Vector2(0.5f, 1.0f);
+            uvs[i+4] = new Vector2(0.5f, 0.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.0f, 0.0f);
+            uvs[i+7] = new Vector2(0.0f, 1.0f);   
+        }
+        for(int i=184; i<192; i += 8){
+            uvs[i] = new Vector2(0.0f, 0.0f);
+            uvs[i+1] = new Vector2(0.0f, 1.0f);
+            uvs[i+2] = new Vector2(0.5f, 0.0f);
+            uvs[i+3] = new Vector2(0.5f, 1.0f);
+            uvs[i+4] = new Vector2(0.5f, 0.0f);
+            uvs[i+5] = new Vector2(0.5f, 1.0f);
+            uvs[i+6] = new Vector2(0.0f, 0.0f);
+            uvs[i+7] = new Vector2(0.0f, 1.0f);   
+        }
+
         mesh.RecalculateNormals();
+        mesh.uv = uvs;
+
         GetComponent<MeshFilter>().mesh = mesh;
 
         GetComponent<MeshRenderer>().material = chairMaterial;
