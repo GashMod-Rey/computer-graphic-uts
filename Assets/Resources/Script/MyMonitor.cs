@@ -19,7 +19,7 @@ public class MyMonitor : MonoBehaviour
     {
         // Declaring and initializing values for our mesh
         Mesh mesh = new Mesh();
-        var vertices = new Vector3[25];
+        var vertices = new Vector3[39];
         var uvs = new Vector2[vertices.Length];
 
         // Titik-titik tangkai monitor
@@ -50,6 +50,21 @@ public class MyMonitor : MonoBehaviour
         vertices[22] = new Vector3(-s - 0.2f, 0, -s + t + det);
         vertices[23] = new Vector3(s + 0.2f, 0, -s + t + det);
         vertices[24] = new Vector3(s, 0, -s);
+
+        vertices[25] = new Vector3(-s, naik, -s);
+        vertices[26] = new Vector3(s, naik, -s);
+        vertices[27] = new Vector3(-s, naik, s);
+        vertices[28] = new Vector3(-s + t, naik, -s);
+        vertices[29] = new Vector3(-s + t, naik, s);
+        vertices[30] = new Vector3(-s + t + det, 0, -s - 0.2f);
+        vertices[31] = new Vector3(-s + t + det, 0, s + 0.2f);
+        vertices[32] = new Vector3(-s, 0, -s);
+        vertices[33] = new Vector3(-s, 0, s);
+        vertices[34] = new Vector3(-s, naik, -s + t);
+        vertices[35] = new Vector3(s, naik, -s + t);
+        vertices[36] = new Vector3(-s - 0.2f, 0, -s + t + det);
+        vertices[37] = new Vector3(s + 0.2f, 0, -s + t + det);
+        vertices[38] = new Vector3(s, 0, -s);
 
         mesh.vertices = vertices;
 
@@ -86,12 +101,10 @@ public class MyMonitor : MonoBehaviour
             18, 17, 19,
             14, 15, 16,
             17, 16, 15,
-            18, 8, 0,
-            8, 18, 19,
-            18, 0, 14,
-            14, 16, 18,
-            15, 19, 17,
-            19, 15, 8,
+            32, 25, 28,
+            28, 30, 32,
+            29, 33, 31,
+            33, 29, 27,
 
             20, 1, 0,
             1, 20, 21,
@@ -99,10 +112,10 @@ public class MyMonitor : MonoBehaviour
             24, 23, 18,
             22, 21, 20,
             21, 22, 23,
-            18, 22, 20,
-            20, 0, 18,
-            21, 24, 1,
-            23, 24, 21,
+            32, 36, 34,
+            34, 25, 32,
+            35, 38, 26,
+            37, 38, 35,
         };
         mesh.RecalculateNormals();
         
@@ -111,8 +124,8 @@ public class MyMonitor : MonoBehaviour
         uvs[2] = new Vector2(1.0f, 0);
         uvs[3] = new Vector2(1.0f, 1.0f);
         uvs[4] = new Vector2(1.0f, 1.0f);
-        uvs[5] = new Vector2(0, 1.0f);
-        uvs[6] = new Vector2(1.0f, 0);
+        uvs[5] = new Vector2(1.0f, 0);
+        uvs[6] = new Vector2(0, 1.0f);
         uvs[7] = new Vector2(0, 0);
         uvs[8] = new Vector2(0, 1.0f);
         uvs[9] = new Vector2(1.0f, 1.0f);
@@ -124,15 +137,30 @@ public class MyMonitor : MonoBehaviour
         // Titik-titik kaki monitor
         uvs[14] = new Vector2(1.0f, 0);
         uvs[15] = new Vector2(1.0f, 1.0f);
-        uvs[16] = new Vector2(0, 1.0f);
-        uvs[17] = new Vector2(0, 0);
+        uvs[16] = new Vector2(0, 0);
+        uvs[17] = new Vector2(0, 1.0f);
         uvs[18] = new Vector2(1.0f, 0);
         uvs[19] = new Vector2(1.0f, 1.0f);
         uvs[20] = new Vector2(1.0f, 0);
         uvs[21] = new Vector2(1.0f, 1.0f);
-        uvs[22] = new Vector2(1.0f, 1.0f);
-        uvs[23] = new Vector2(0, 0);
+        uvs[22] = new Vector2(0, 0f);
+        uvs[23] = new Vector2(0, 1.0f);
         uvs[24] = new Vector2(1.0f, 1.0f);
+
+        uvs[25] = new Vector2(1.0f, 0);
+        uvs[26] = new Vector2(0, 1.0f);
+        uvs[27] = new Vector2(0, 1.0f);
+        uvs[28] = new Vector2(0, 0);
+        uvs[29] = new Vector2(0, 0);
+        uvs[30] = new Vector2(0, 1.0f);
+        uvs[31] = new Vector2(1.0f, 0);
+        uvs[32] = new Vector2(1.0f, 1.0f);
+        uvs[33] = new Vector2(1.0f, 1.0f);
+        uvs[34] = new Vector2(0, 0);
+        uvs[35] = new Vector2(1.0f, 1.0f);
+        uvs[36] = new Vector2(0, 1.0f);
+        uvs[37] = new Vector2(1.0f, 0f);
+        uvs[38] = new Vector2(0f, 0f);
 
         mesh.uv = uvs;
         GetComponent<MeshFilter>().mesh = mesh;
