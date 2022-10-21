@@ -6,7 +6,7 @@ using UnityEngine;
 public class TopSpotLightTubeAdjuster : MonoBehaviour
 {
     bool isBackward = false;
-    float spinSpeed = 2f;
+    public float spinSpeed = 2f;
     Vector3 RotateAmountX = new Vector3(50.0f, 0f, 0.0f);
     Vector3 TranslateAmountYZ1 = new Vector3(0.0f, 0.5f/2f, 1.1f/2f);
     Vector3 TranslateAmountYZ2 = new Vector3(0.0f, 1.4f/2f, -0.1f/2f);
@@ -59,9 +59,23 @@ public class TopSpotLightTubeAdjuster : MonoBehaviour
             else if(UnityEditor.TransformUtils.GetInspectorRotation(gameObject.transform).x >= 0) {
                 isBackward = true;
                 transform.rotation = Quaternion.Euler(0, 0, 0);
-                transform.position = new Vector3(transform.position.x, 12.49679f, 13.15581f);
-                
+                transform.position = new Vector3(transform.position.x, 12.49679f, 13.15581f); 
             }
+        }
+
+        if(spinSpeed >= 0.5f && spinSpeed <= 10f) {
+            if(Input.GetKey(",")) {
+                spinSpeed += 0.01f;
+            }
+            else if(Input.GetKey(".")) {
+                spinSpeed -= 0.01f;
+            } 
+        }
+        else if(spinSpeed <= 0.5f) {
+            spinSpeed = 0.5f;
+        }
+        else if(spinSpeed >= 10f) {
+            spinSpeed = 10f;
         }
     }
 }
